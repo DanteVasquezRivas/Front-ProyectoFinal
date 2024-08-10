@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@eslint/config-array": "^0.17.1",
+    "@eslint/object-schema": "^2.1.4",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "context": "^3.0.31",
@@ -17,7 +19,8 @@
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",
     "react-router-bootstrap": "^0.26.3",
-    "react-router-dom": "^6.26.0"
+    "react-router-dom": "^6.26.0",
+    "rimraf": "^6.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

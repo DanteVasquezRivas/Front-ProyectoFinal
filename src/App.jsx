@@ -12,6 +12,7 @@ import MyProducts from "./views/MyProducts.jsx";
 import Orders from "./views/Orders.jsx";
 import Publish from "./views/Publish.jsx";
 import NotFound from './views/NotFound'
+import Footer from './views/Footer.jsx'
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/publish" element={<Publish />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer/>
     </div>
   );
 };

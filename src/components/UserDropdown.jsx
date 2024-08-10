@@ -15,17 +15,17 @@ const UserDropdown = () => {
       </DropdownToggle>
 
       <DropdownMenu>
-        <LinkContainer to="/publish">
-          <DropdownItem>Publicar producto</DropdownItem>
+        <LinkContainer to="/profile">
+          <DropdownItem>Mi Perfil</DropdownItem>
         </LinkContainer>
         <LinkContainer to="/my-products">
           <DropdownItem>Mis Publicaciones</DropdownItem>
         </LinkContainer>
-        <LinkContainer to="/profile">
-          <DropdownItem>Mi Perfil</DropdownItem>
-        </LinkContainer>
         <LinkContainer to="/orders">
           <DropdownItem>Mis Ordenes</DropdownItem>
+        </LinkContainer>
+        <LinkContainer to="/publish">
+          <DropdownItem>Publicar producto</DropdownItem>
         </LinkContainer>
       </DropdownMenu>
     </Dropdown>

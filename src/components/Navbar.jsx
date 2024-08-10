@@ -9,19 +9,17 @@ function NavbarPlantiv() {
     <>
       <Navbar className="Navbar">
         <Container className="containerNavbar">
-          <NavbarBrand to="/">PetStore</NavbarBrand>
+          <NavbarBrand to="/">Pets Store</NavbarBrand>
           <Nav className="nav">
             <NavLink className="navlinkNavbar" to="/">
               Home
             </NavLink>
-
-            <NavLink className="navlinkNavbar" to="/login">
-              Login
-            </NavLink>
             <NavLink className="navlinkNavbar" to="/register">
-              Registrarse
+              Crear cuenta
             </NavLink>
-
+            <NavLink className="navlinkNavbar" to="/login">
+              Iniciar sesión
+            </NavLink>
             <NavLink className="navlinkNavbar" to="/products">
               Productos
             </NavLink>
