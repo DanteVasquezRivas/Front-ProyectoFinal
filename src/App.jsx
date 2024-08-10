@@ -14,6 +14,8 @@ import Publish from "./views/Publish.jsx";
 import NotFound from './views/NotFound'
 import Footer from './views/Footer.jsx'
 
+import "./App.css";
+
 const App = () => {
   return (
     <div>

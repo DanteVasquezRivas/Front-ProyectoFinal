@@ -1,27 +1,28 @@
 import React from "react";
 import ButtonProducts from "../components/ButtonProducts.jsx";
-import "./Home.css";
+import CRapida from "../assets/img/stickers/icons8-shopping-cart.png"
+import ESeguro from "../assets/img/stickers/icons8-enviado.png"
+import SProtegido from "../assets/img/stickers/icons8-seguridad-comprobado.png"
+import Garantia from "../assets/img/stickers/icons8-garantia.png"
+
 
 const Home = () => {
   return (
     <div className="home">
       <div className="homeImg">
-        <h1>Encuentra aquí todo lo que necesitas para el regalón del hogar</h1>
-        <img src="" alt="" />
-        {/* No me permite subir imagenes */}
       </div>
       <br />
       <ButtonProducts className="buttonProducts" to="/products">
         Ver Productos
       </ButtonProducts>
       <div>
-        <img src="" alt="" /> {/* No me permite subir imagenes */}
+        <img src={CRapida} alt="" /> {/* No me permite subir imagenes */}
         <p>Compra rápida</p>
-        <img src="" alt="" /> {/* No me permite subir imagenes */}
+        <img src={ESeguro} alt="" /> {/* No me permite subir imagenes */}
         <p>Envío seguro</p>
-        <img src="" alt="" /> {/* No me permite subir imagenes */}
+        <img src={SProtegido} alt="" /> {/* No me permite subir imagenes */}
         <p>Sitio protegido</p>
-        <img src="" alt="" /> {/* No me permite subir imagenes */}
+        <img src={Garantia} alt="" /> {/* No me permite subir imagenes */}
         <p>Garantía</p>
       </div>
     </div>
