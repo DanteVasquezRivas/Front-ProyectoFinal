@@ -1,6 +1,5 @@
 .Navbar {
     background-color: red;
-   
     width: 100%;
     margin: auto;
   }
@@ -33,17 +32,30 @@
   }
   
 .homeImg {
-    background-image: url("../src/assets/img/nav.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url("../src/assets/img/Banner2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  
     width: 100%;
     height: 30rem;
-    text-align: center;
+    
+   
+   
+}
+.category{
+    
     display: flex;
     justify-content: center;
     align-items: center;
-   
+    padding: 10%;
+  
 }
+
+.subcategory{
+    padding: 50px;
+
+}
+
 
 .ContainerRegister {
     background-color: #dae8d0;
@@ -52,17 +64,25 @@
     border-radius: 3rem;
     padding: 2rem;
     text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
-  
+
 .formRegister {
     display: flex;
     justify-content: center;
     text-align: center;
     gap: 3rem;
+    padding: 2rem;
   }
-  
 
+.cards{
+    padding: 3rem; 
+}
 
+.login{
+    padding: 3rem;   
+}
 
 .footer{
 background-color: red;

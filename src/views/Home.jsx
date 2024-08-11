@@ -15,15 +15,28 @@ const Home = () => {
       <ButtonProducts className="buttonProducts" to="/products">
         Ver Productos
       </ButtonProducts>
-      <div>
-        <img src={CRapida} alt="" /> {/* No me permite subir imagenes */}
+      <div className="category">
+<div className="subcategory">
+<img src={CRapida} alt="" /> 
         <p>Compra rápida</p>
-        <img src={ESeguro} alt="" /> {/* No me permite subir imagenes */}
+</div>
+<div className="subcategory">
+<img src={ESeguro} width={50} alt="" /> 
         <p>Envío seguro</p>
-        <img src={SProtegido} alt="" /> {/* No me permite subir imagenes */}
-        <p>Sitio protegido</p>
-        <img src={Garantia} alt="" /> {/* No me permite subir imagenes */}
-        <p>Garantía</p>
+    </div>  
+        
+   <div className="subcategory">
+      <img src={SProtegido} alt="" /> 
+       <p>Sitio protegido</p>
+      </div> 
+
+      <div className="subcategory">
+   <img src={Garantia} alt="" /> 
+    <p>Garantía</p>
+
+   </div>
+      
+     
       </div>
     </div>
     

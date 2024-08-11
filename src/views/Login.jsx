@@ -28,7 +28,7 @@ const Login = () => {
   };
 
   return (
-    <Container>
+    <Container className="login">
       <Row className="justify-content-md-center">
         <Col md={6}>
           <h1 className="text-center">INICIAR SESIÓN</h1>

@@ -35,7 +35,7 @@ const Register = () => {
   return (
     <Container className="ContainerRegister">
       <Row className="justify-content-md-center">
-        <Col>
+        <Col className="registro">
           <h1 className="text-center">CREAR CUENTA</h1>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
