@@ -2,7 +2,7 @@ import { Container, Nav, Navbar, NavbarBrand } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import UserDropdown from "../components/UserDropdown";
-import LogoPet from "../assets/img/Logo.png"
+import LogoPet from "../assets/img/logo.png"
 
 
 function NavbarPlantiv() {
@@ -25,9 +25,9 @@ function NavbarPlantiv() {
             <NavLink className="navlinkNavbar" to="/products">
               Productos
             </NavLink>
-            <NavLink className="navlinkNavbar" to="/cart">
+            {/* <NavLink className="navlinkNavbar" to="/cart">
               Carrito
-            </NavLink>
+            </NavLink> */}
             <UserDropdown />
           </Nav>
         </Container>

@@ -42,6 +42,7 @@
    
    
 }
+
 .category{
     
     display: flex;
@@ -78,6 +79,12 @@
 
 .cards{
     padding: 3rem; 
+}
+
+.photo{
+  width: 40;
+  height: 40;
+
 }
 
 .login{

@@ -13,8 +13,10 @@ import Orders from "./views/Orders.jsx";
 import Publish from "./views/Publish.jsx";
 import NotFound from './views/NotFound'
 import Footer from './views/Footer.jsx'
-
+import ProductDetails from "./views/ProductDetails.jsx";
 import "./App.css";
+
+//Tratar de sacar todos los archivos que contengan mi carrito y mi cuenta
 
 const App = () => {
   return (
@@ -27,6 +29,7 @@ const App = () => {
         <Route path="/products" element={<Products />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/my-products" element={<MyProducts />} />
+        <Route path="/productDetails" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/publish" element={<Publish />} />
