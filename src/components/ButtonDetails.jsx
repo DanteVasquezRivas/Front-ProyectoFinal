@@ -15,7 +15,7 @@ const ButtonDetails = ({ to, children }) => {
     }
   };
 
-  return <button onClick={handleClick}>{children}</button>;
+  return <button class="btn btn-primary" onClick={handleClick}>{children}</button>;
 };
 
 export default ButtonDetails;

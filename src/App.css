@@ -27,38 +27,42 @@
     background-attachment: fixed;
   }
   
-
-
 .home {
     text-align: center;
   }
   
 .homeImg {
-    background-image: url("../src/assets/img/Banner2.png");
+  background-image: url("../src/assets/img/Banner2.png");
   background-repeat: no-repeat;
   background-size: cover;
-  
-    width: 100%;
-    height: 30rem;
-    
-   
-   
+  width: 100%;
+  height: 30rem; 
 }
 
 .category{
-    
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10%;
-  
 }
 
 .subcategory{
     padding: 50px;
-
 }
 
+.novedades{
+  display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.photo1{
+  padding: 60px;
+}
+
+.btn{
+  margin: 10px;
+}
 
 .ContainerRegister {
     background-color: #dae8d0;
@@ -86,7 +90,6 @@
 .photo{
   width: 40;
   height: 40;
-
 }
 
 .login{
