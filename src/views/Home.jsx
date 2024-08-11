@@ -13,9 +13,9 @@ const Home = () => {
       </div>
       <br />
         <div className="novedades">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5oNj9EuExCwVVkyOYYijVZvgbva9WffUsVA&s" alt="bolsas" />
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZsz5HBYL9IDzwagyyTDoDCFffj6GPimQteA&s" alt="conejo" />
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSS8QIUMtWyz31PPD3DwmbXRf7lbq-IHxCng&s" alt="gato" />
+          <img className="photo1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5oNj9EuExCwVVkyOYYijVZvgbva9WffUsVA&s" alt="bolsas" />
+          <img className="photo1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZsz5HBYL9IDzwagyyTDoDCFffj6GPimQteA&s" alt="conejo" />
+          <img className="photo1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSS8QIUMtWyz31PPD3DwmbXRf7lbq-IHxCng&s" alt="gato" />
         </div>
       <br />
       <ButtonProducts className="buttonProducts" to="/products">
