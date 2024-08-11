@@ -6,27 +6,28 @@
     padding-right: 30px;
   }
   
-  .containerNavbar {
+.containerNavbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: auto;
     margin: auto;
   }
-  .nav {
+
+.nav {
     display: flex;
     justify-content: center;
     gap: 1rem;
     align-items: center;
   }
   
-  .navlinkNavbar {
+.navlinkNavbar {
     text-decoration: none;
     text-decoration-line: none;
     color: white;
     background-attachment: fixed;
   }
-  
+
 .home {
     text-align: center;
   }
