@@ -1,21 +1,13 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../context/AuthContext.jsx";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
-//to para definir la ruta en Home y Children el texto del boton
-const ButtonDetails = ({ to, children }) => {
-  const { user } = useContext(AuthContext);
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    if (!user) {
-      navigate(to);
-    } else {
-      navigate(to);
-    }
-  };
-
-  return <button class="btn btn-primary" onClick={handleClick}>{children}</button>;
+const ButtonDetails = ({ to, children, ...props }) => {
+  return (
+    <Button as={Link} to={to} {...props}>
+      {children}
+    </Button>
+  );
 };
 
 export default ButtonDetails;

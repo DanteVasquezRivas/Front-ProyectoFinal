@@ -1,26 +1,34 @@
-import React from 'react'
-//import { CartContext } from '../context/CartContext'
-//import {Products} from '../views/Products'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import api from '../config/configAxios.jsx';
 
-const ProductDetails = (props) => {
-  const { img, description, name, price } = props
-  const [selectedPizza, setSelectedPizza] = useState([]);
+const ProductDetails = () => {
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
 
-  //const { addToCart, removeFromCart, cartItems } = useMyContext()
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const response = await api.get(`/products/${id}`);
+        setProduct(response.data);
+      } catch (error) {
+        console.error('Error fetching product details:', error);
+      }
+    };
 
+    fetchProduct();
+  }, [id]);
+
+  if (!product) return <p>Productos</p>; //me sigue trayendo este mensaje, ya que no hemos agregado la Api
 
   return (
-    <CartContext>
-      <Products>
-        <img src={img} alt={name} /> {/* no nos esta tomando la img */}
-        <div>
-          <h2>{name}</h2>
-          <p>Descripcion: {description}</p>
-          <p>Valor: ${price}</p>
-        </div>
-      </Products>
-    </CartContext>
-  )
-}
+    <div>
+      <img src={product.imageUrl} alt={product.name} />
+      <h2>{product.name}</h2>
+      <p>Description: {product.description}</p>
+      <p>Price: ${product.price}</p>
+    </div>
+  );
+};
 
-export default ProductDetails
+export default ProductDetails;
