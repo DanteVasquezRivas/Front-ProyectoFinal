@@ -15,7 +15,7 @@ const ButtonProducts = ({ to, children }) => {
     }
   };
 
-  return <button class="btn btn-danger btn-lg" onClick={handleClick}>{children}</button>;
+  return <button className="btn btn-danger btn-lg" onClick={handleClick}>{children}</button>;
 };
 
 export default ButtonProducts;
