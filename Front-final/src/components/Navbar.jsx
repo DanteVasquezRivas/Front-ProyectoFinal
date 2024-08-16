@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LogoPet from "../assets/img/LogoPet.png"
 import LogoWrite from "../assets/img/LogoWrite.png"
+import UserDropdown from "../components/UserDropdown";
 
 
 
@@ -33,6 +34,10 @@ function NavbarPlantiv() {
             <NavLink className="navlinkNavbar" to="/products">
               Productos
             </NavLink>
+            <NavLink className="navlinkNavbar" to="/cart">
+              Carrito
+            </NavLink>
+            <UserDropdown />
           </Nav>
         </Container>
       </Navbar>

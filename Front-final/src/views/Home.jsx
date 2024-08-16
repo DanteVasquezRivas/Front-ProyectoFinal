@@ -22,27 +22,24 @@ const Home = () => {
         Ver Productos
       </ButtonProducts>
       <div className="category">
+        <div className="subcategory">
+          <img src={CRapida} alt="" /> 
+            <p>Compra rápida</p>
+        </div>
       <div className="subcategory">
-      <img src={CRapida} alt="" /> 
-        <p>Compra rápida</p>
-    </div>
-    <div className="subcategory">
-    <img src={ESeguro} width={50} alt="" /> 
-        <p>Envío seguro</p>
-    </div>  
+          <img src={ESeguro} width={50} alt="" /> 
+            <p>Envío seguro</p>
+      </div>  
         
-   <div className="subcategory">
-      <img src={SProtegido} alt="" /> 
-       <p>Sitio protegido</p>
+      <div className="subcategory">
+        <img src={SProtegido} alt="" /> 
+          <p>Sitio protegido</p>
       </div> 
 
       <div className="subcategory">
-   <img src={Garantia} alt="" /> 
-    <p>Garantía</p>
-
-   </div>
-      
-     
+        <img src={Garantia} alt="" /> 
+          <p>Garantía</p>
+      </div>
       </div>
     </div>
     
