@@ -25,9 +25,12 @@ const Publish = () => {
   };
 
   return (
-    <Container>
+    <Container className="ContainerPublish">
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formName">
+          <div className="title1">
+              <h2>Agrega tu producto</h2>
+          </div>
           <Form.Label>Nombre</Form.Label>
           <Form.Control
             type="text"
