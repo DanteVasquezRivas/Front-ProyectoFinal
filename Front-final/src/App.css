@@ -97,6 +97,14 @@
     padding: 3rem;   
 }
 
+.ContainerPublish{
+  margin: 70px;
+}
+
+.title1{
+text-align: center;
+margin: 40px;
+}
 .footer{
 background-color: red;
 color: white;
