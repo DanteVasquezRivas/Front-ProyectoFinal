@@ -5,6 +5,8 @@ import api from '../config/configAxios.jsx';
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -13,13 +15,18 @@ const ProductDetails = () => {
         setProduct(response.data);
       } catch (error) {
         console.error('Error fetching product details:', error);
+        setError('Error fetching product details');
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchProduct();
   }, [id]);
 
-  if (!product) return <p>Productos</p>; //me sigue trayendo este mensaje, ya que no hemos agregado la Api
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
+  if (!product) return <p>Product not found</p>;
 
   return (
     <div>

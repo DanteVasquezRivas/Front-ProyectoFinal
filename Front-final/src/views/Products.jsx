@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Products.css';
-import { useCart } from './CartContext'; // Importa el hook del contexto
+import { useCart } from './CartContext';
 
 const Products = () => {
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(null);
-    const { addToCart } = useCart(); // Obtén la función addToCart del contexto
+    const { addToCart } = useCart();
 
     useEffect(() => {
         fetch('http://localhost:3001/api/products')
@@ -28,7 +28,7 @@ const Products = () => {
     }
 
     const handleAddToCart = (product) => {
-        addToCart(product); // Agrega el producto al carrito
+        addToCart(product);
         alert(`Producto ${product.name} agregado al carrito`);
     };
 
