@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Form, Button, Container, Row, Col, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext.jsx";
+import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -20,7 +20,6 @@ const Login = () => {
     e.preventDefault();
     try {
       await login(form.email, form.password);
-      navigate("/");
     } catch (error) {
       setError("Invalid email or password");
     }
@@ -45,7 +44,6 @@ const Login = () => {
               />
             </Form.Group>
             <br/>
-
             <Form.Group controlId="formPassword">
               <Form.Label>Contraseña:</Form.Label>
               <Form.Control
@@ -57,7 +55,6 @@ const Login = () => {
                 required
               />
             </Form.Group>
-
             <Button variant="primary" type="submit" className="mt-3">
               Ingresar
             </Button>

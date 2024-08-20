@@ -9,30 +9,32 @@ import Publish from "./views/Publish.jsx";
 import NotFound from './views/NotFound';
 import Footer from './views/Footer.jsx';
 import ProductDetails from "./views/ProductDetails.jsx";
-import Profile from "./views/Profile.jsx"
-import Orders from "./views/Orders.jsx"
+import Profile from "./views/Profile.jsx";
+import Orders from "./views/Orders.jsx";
 import MyProducts from "./views/MyProducts.jsx";
+import { CartProvider } from './views/CartContext.jsx';
 import "./App.css";
-
 
 const App = () => {
   return (
-    <div>
-      <NavbarPlantiv />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/productDetails/:id" element={<ProductDetails />} />
-        <Route path="/myproducts" element={<MyProducts />} />
-        <Route path="/publish" element={<Publish />} />
-        <Route path="/orders" element={<Orders />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-    </div>
+    <CartProvider>
+      <div>
+        <NavbarPlantiv />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/productDetails/:id" element={<ProductDetails />} />
+          <Route path="/myproducts" element={<MyProducts />} />
+          <Route path="/publish" element={<Publish />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </div>
+    </CartProvider>
   );
 };
 

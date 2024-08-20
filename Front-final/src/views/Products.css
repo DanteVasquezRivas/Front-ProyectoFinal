@@ -1,0 +1,59 @@
+/* Agregue el css aqui SOLO de los productos */
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px; 
+}
+
+.product-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden; 
+  padding: 10px; 
+  text-align: center; 
+  background-color: #fff; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.product-image {
+  width: 80%; 
+  height: 200px;
+  object-fit: cover; 
+  display: block;
+  margin: 0 auto; 
+}
+
+.product-buttons {
+  margin-top: 10px; 
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-details {
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-details:hover {
+  background-color: #0056b3;
+}
+
+.btn-add-to-cart {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #218838;
+}
