@@ -1,3 +1,4 @@
+-- Active: 1724450487622@@127.0.0.1@5432@tienda_mascotas@public
 -- Crear tablas de la base de datos
 
 CREATE TABLE usuarios (

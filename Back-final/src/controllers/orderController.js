@@ -1,13 +1,13 @@
+const orderModel = require('../models/orderModel');
+
 const getAllOrders = async (req, res) => {
   try {
-    const result = await req.db.query('SELECT * FROM pedidos');
-    res.status(200).json(result.rows);
+    const orders = await orderModel.getAllOrders(req.db);
+    res.status(200).json(orders);
   } catch (error) {
     console.error(error);
     res.status(500).send('Error fetching orders');
   }
 };
 
-module.exports = {
-  getAllOrders
-};
+module.exports = { getAllOrders };

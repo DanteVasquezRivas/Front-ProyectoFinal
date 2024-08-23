@@ -1,3 +1,4 @@
+// api.test.js
 const request = require('supertest');
 const app = require('../index');
 
@@ -23,7 +24,7 @@ describe('API Tests', () => {
   it('should create a new product', async () => {
     const newProduct = {
       nombre: 'Producto Test',
-      precio: '9.99',
+      precio: 9.99,
       descripcion: 'Descripción de prueba',
       image_url: 'http://example.com/image.jpg',
     };

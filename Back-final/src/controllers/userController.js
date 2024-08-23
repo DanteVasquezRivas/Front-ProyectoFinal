@@ -1,30 +1,42 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const userModel = require('../models/userModel');
 
-const getAllUsers = async (req, res) => {
+const loginUser = async (req, res) => {
+  const { email, contraseña } = req.body;
+
   try {
-    const result = await req.db.query('SELECT * FROM usuarios');
-    res.status(200).json(result.rows);
+    const result = await userModel.getAllUsers(req.db); // llamar a todos los usuarios
+    const user = result.find(u => u.email === email); // buscar por email
+
+    if (!user) {
+      return res.status(401).json({ error: 'Credenciales inválidas' });
+    }
+
+    const isMatch = await bcrypt.compare(contraseña, user.contraseña);
+
+    if (!isMatch) {
+      return res.status(401).json({ error: 'Credenciales inválidas' });
+    }
+
+    const token = jwt.sign({ id_user: user.id_user }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    res.json({ token });
   } catch (error) {
-    res.status(500).json({ error: 'Error al obtener usuarios' });
+    res.status(500).json({ error: 'Error al iniciar sesión' });
   }
 };
 
 const createUser = async (req, res) => {
-  const { nombre, apellido, email, contraseña } = req.body;
-  
+  const { email, contraseña } = req.body;
+
   try {
     const hashedPassword = await bcrypt.hash(contraseña, 10);
-    const result = await req.db.query(
-      'INSERT INTO usuarios (nombre, apellido, email, contraseña) VALUES ($1, $2, $3, $4) RETURNING *',
-      [nombre, apellido, email, hashedPassword]
-    );
-    const user = result.rows[0];
-    const token = jwt.sign({ id_user: user.id_user }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    res.status(201).json({ user, token });
+    const newUser = await userModel.createUser(req.db, { email, contraseña: hashedPassword });
+
+    res.status(201).json({ message: 'Usuario creado con éxito', user: newUser });
   } catch (error) {
-    res.status(500).json({ error: 'Error al crear usuario' });
+    res.status(500).json({ error: 'Error al crear el usuario' });
   }
 };
 
-module.exports = { getAllUsers, createUser };
+module.exports = { createUser, loginUser };
