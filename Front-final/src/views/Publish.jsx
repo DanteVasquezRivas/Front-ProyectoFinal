@@ -20,8 +20,10 @@ const Publish = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form);
-    // Aquí puedes manejar la lógica para enviar el formulario al backend
+    if (!form.name || !form.price) {
+      alert("Por favor, complete todos los campos requeridos.");
+      return;
+    }
   };
 
   return (
