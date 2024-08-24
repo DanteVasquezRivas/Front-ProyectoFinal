@@ -1,21 +1,19 @@
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const userModel = require('../models/userModel');
-
 const loginUser = async (req, res) => {
   const { email, contraseña } = req.body;
 
   try {
+    console.log('Recibida solicitud de inicio de sesión con email:', email);
     const users = await userModel.getAllUsers(req.db);
     const user = users.find(u => u.email === email);
 
     if (!user) {
+      console.log('Usuario no encontrado');
       return res.status(401).json({ error: 'Credenciales inválidas' });
     }
 
-    const isMatch = await bcrypt.compare(contraseña, user.contraseña);
-
+    const isMatch = await bcrypt.compare(contraseña, user.password);
     if (!isMatch) {
+      console.log('Contraseña incorrecta');
       return res.status(401).json({ error: 'Credenciales inválidas' });
     }
 
@@ -26,19 +24,3 @@ const loginUser = async (req, res) => {
     res.status(500).json({ error: 'Error al iniciar sesión' });
   }
 };
-
-const createUser = async (req, res) => {
-  const { nombre, apellido, email, contraseña } = req.body;
-
-  try {
-    const hashedPassword = await bcrypt.hash(contraseña, 10);
-    const newUser = await userModel.createUser(req.db, { nombre, apellido, email, contraseña: hashedPassword });
-
-    res.status(201).json({ message: 'Usuario creado con éxito', user: newUser });
-  } catch (error) {
-    console.error('Error en createUser:', error);
-    res.status(500).json({ error: 'Error al crear el usuario: ' + error.message });
-  }
-};
-
-module.exports = { createUser, loginUser };

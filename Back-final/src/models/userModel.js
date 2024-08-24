@@ -1,20 +1,12 @@
-const bcrypt = require('bcrypt');
+// src/models/userModel.js
+const { Pool } = require('pg'); // Asegúrate de usar pg si estás usando PostgreSQL
 
-const getAllUsers = async (db) => {
+const createUser = async (db, user) => {
+  const { nombre, apellido, email, contraseña } = user;
   try {
-    const result = await db.query('SELECT * FROM perfiles');
-    return result.rows;
-  } catch (error) {
-    throw new Error('Error al obtener usuarios');
-  }
-};
-
-const createUser = async (db, { nombre, apellido, email, contraseña }) => {
-  try {
-    const hashedPassword = await bcrypt.hash(contraseña, 10);
     const result = await db.query(
-      'INSERT INTO perfiles (nombre, apellido, email, contraseña) VALUES ($1, $2, $3, $4) RETURNING *',
-      [nombre, apellido, email, hashedPassword]
+      'INSERT INTO perfiles (nombre, apellido, email, password) VALUES ($1, $2, $3, $4) RETURNING *',
+      [nombre, apellido, email, contraseña]
     );
     return result.rows[0];
   } catch (error) {
@@ -22,4 +14,4 @@ const createUser = async (db, { nombre, apellido, email, contraseña }) => {
   }
 };
 
-module.exports = { getAllUsers, createUser };
+module.exports = { createUser };
