@@ -3,6 +3,7 @@ const getAllProducts = async (db) => {
     const result = await db.query('SELECT * FROM productos');
     return result.rows;
   } catch (error) {
+    console.error('Error in getAllProducts:', error.message);
     throw new Error('Error al obtener productos');
   }
 };
@@ -13,6 +14,7 @@ const getProductById = async (db, id) => {
     if (result.rows.length === 0) throw new Error('Producto no encontrado');
     return result.rows[0];
   } catch (error) {
+    console.error('Error in getProductById:', error.message);
     throw new Error('Error al obtener producto');
   }
 };
@@ -25,6 +27,7 @@ const createProduct = async (db, { nombre, precio, descripcion, image_url }) => 
     );
     return result.rows[0];
   } catch (error) {
+    console.error('Error in createProduct:', error.message);
     throw new Error('Error al crear producto');
   }
 };

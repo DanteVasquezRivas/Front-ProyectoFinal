@@ -6,15 +6,15 @@ const userController = require('../controllers/userController');
 const { authenticateToken } = require('../middlewares/authMiddleware');
 
 // Productos
-router.get('/products', productController.getAllProducts);
-router.get('/products/:id', productController.getProductById);
-router.post('/products', authenticateToken, productController.createProduct);
+router.get('/productos', productController.getAllProducts); // Ruta para obtener todos los productos
+router.get('/productos/:id', productController.getProductById); // Ruta para obtener un producto por ID
+router.post('/productos', authenticateToken, productController.createProduct); // Ruta para crear un producto
 
 // Pedidos
-router.get('/pedidos', authenticateToken, orderController.getAllOrders);
+router.get('/pedidos', authenticateToken, orderController.getAllOrders); // Ruta para obtener todos los pedidos
 
 // Usuarios
-router.post('/auth/login', userController.loginUser);
-router.post('/auth/register', userController.createUser);
+router.post('/auth/login', userController.loginUser); // Ruta para el login de usuario
+router.post('/auth/register', userController.createUser); // Ruta para el registro de usuario
 
 module.exports = router;
