@@ -6,8 +6,8 @@ const loginUser = async (req, res) => {
   const { email, contraseña } = req.body;
 
   try {
-    const result = await userModel.getAllUsers(req.db); // llamar a todos los usuarios
-    const user = result.find(u => u.email === email); // buscar por email
+    const users = await userModel.getAllUsers(req.db);
+    const user = users.find(u => u.email === email);
 
     if (!user) {
       return res.status(401).json({ error: 'Credenciales inválidas' });
@@ -22,20 +22,22 @@ const loginUser = async (req, res) => {
     const token = jwt.sign({ id_user: user.id_user }, process.env.JWT_SECRET, { expiresIn: '1h' });
     res.json({ token });
   } catch (error) {
+    console.error('Error en loginUser:', error);
     res.status(500).json({ error: 'Error al iniciar sesión' });
   }
 };
 
 const createUser = async (req, res) => {
-  const { email, contraseña } = req.body;
+  const { nombre, apellido, email, contraseña } = req.body;
 
   try {
     const hashedPassword = await bcrypt.hash(contraseña, 10);
-    const newUser = await userModel.createUser(req.db, { email, contraseña: hashedPassword });
+    const newUser = await userModel.createUser(req.db, { nombre, apellido, email, contraseña: hashedPassword });
 
     res.status(201).json({ message: 'Usuario creado con éxito', user: newUser });
   } catch (error) {
-    res.status(500).json({ error: 'Error al crear el usuario' });
+    console.error('Error en createUser:', error);
+    res.status(500).json({ error: 'Error al crear el usuario: ' + error.message });
   }
 };
 
