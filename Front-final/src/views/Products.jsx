@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../views/CartContext";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -18,12 +20,16 @@ const Products = () => {
       }
     };
     
-
     fetchProducts();
   }, []);
 
   const handleDetailsClick = (productId) => {
     navigate(`/productDetails/${productId}`);
+  };
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    alert(`${product.nombre} ha sido agregado al carrito.`);
   };
 
   return (
@@ -48,7 +54,12 @@ const Products = () => {
                 >
                   Ver más
                 </Button>
-                <Button variant="primary">Agregar al carrito</Button>
+                <Button 
+                  variant="primary"
+                  onClick={() => handleAddToCart(product)}
+                >
+                  Agregar al carrito
+                </Button>
               </Card.Body>
             </Card>
           </Col>
