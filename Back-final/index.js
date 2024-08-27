@@ -16,7 +16,7 @@ app.use((req, res, next) => {
   next();
 });
 
-const apiRoutes = require('./routes/apiRoutes');
+const apiRoutes = require('./src/routes/apiRoutes');
 app.use('/api', apiRoutes);
 
 app.use((err, req, res, next) => {

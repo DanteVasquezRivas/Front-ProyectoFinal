@@ -1,4 +1,4 @@
--- Active: 1724450487622@@127.0.0.1@5432@tienda_mascotas@public
+-- Active: 1724450487622@@127.0.0.1@5432@tienda_mascotas
 -- Crear tablas de la base de datos
 
 CREATE DATABASE tienda_mascotas
