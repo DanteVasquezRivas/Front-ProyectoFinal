@@ -169,6 +169,19 @@ color: white;
 text-align: center;
 }
 
+
+.imgDetails img{
+  width: 30%;
+  height: 30%; 
+  margin:50px ;
+  
+}
+   
+.description{
+padding-left: 20px;
+;
+}
+
 .footer2{
 background-color: black;
 color: white;
