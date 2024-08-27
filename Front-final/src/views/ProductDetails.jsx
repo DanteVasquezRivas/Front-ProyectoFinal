@@ -9,7 +9,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await api.get(`/productos/${id}`);
+        const response = await api.get(`https://front-proyectofinal-5o94.onrender.com/api/productos/${id}`); //corregir error o agregar ${id}
         console.log('Product details:', response.data);
         setProduct(response.data);
       } catch (error) {
