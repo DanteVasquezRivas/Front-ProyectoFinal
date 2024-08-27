@@ -74,9 +74,17 @@ const insert =() => {
 ('Arnes para conejo', 20000, 'Accesorio para conejos','https://faunasalud.cl/wp-content/uploads/2022/11/137-0103.jpg') ON CONFLICT(nombre) DO NOTHING;`
 }
 
+const update = () =>{
+  return `UPDATE productos 
+  SET image_url = 'https://space-theprofit.nyc3.cdn.digitaloceanspaces.com/public/Products/juguete-para-perros-forma-de-hueso_6579285a435f1.webp'
+  WHERE id_productos = 3;`
+}
+
 const data_init_base=async() => {
   await pool.query(create_tables())
   await pool.query(insert())
+  await pool.query(update())
 }
+
 
 module.exports ={data_init_base,pool}
