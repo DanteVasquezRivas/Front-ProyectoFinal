@@ -14,7 +14,7 @@ pool.connect(function(err,client,done){
 })
 
 const create_tables=() => {
-  return `CREATE TABLE usuarios (
+  return `CREATE TABLE if not exists usuarios (
   id_user SERIAL PRIMARY KEY,
   nombre VARCHAR(100) NOT NULL,
   apellido VARCHAR(100) NOT NULL,
@@ -22,7 +22,7 @@ const create_tables=() => {
   contraseña VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE perfiles (
+CREATE TABLE if not exists perfiles (
   id_perfil SERIAL PRIMARY KEY,
   nombre VARCHAR(100) NOT NULL,
   apellido VARCHAR(100) NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE perfiles (
   contraseña VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE formularios (
+CREATE TABLE if not exists formularios (
   id_form SERIAL PRIMARY KEY,
   id_perfil INTEGER REFERENCES perfiles(id_perfil),
   nombre VARCHAR(100) NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE formularios (
   descripcion TEXT
 );
 
-CREATE TABLE productos (
+CREATE TABLE if not exists productos (
   id_productos SERIAL PRIMARY KEY,
   nombre VARCHAR(100) NOT NULL UNIQUE,
   precio DECIMAL NOT NULL,
@@ -48,14 +48,14 @@ CREATE TABLE productos (
   image_url VARCHAR(255)
 );
 
-CREATE TABLE pedidos (
+CREATE TABLE if not exists pedidos (
   pedido_id SERIAL PRIMARY KEY,
   cliente_id INTEGER REFERENCES usuarios(id_user),
   fecha_pedido DATE NOT NULL,
   total DECIMAL NOT NULL
 );
 
-CREATE TABLE detalle_pedidos (
+CREATE TABLE if not exists detalle_pedidos (
   detalle_id SERIAL PRIMARY KEY,
   pedido_id INTEGER REFERENCES pedidos(pedido_id),
   producto_id INTEGER REFERENCES productos(id_productos),

@@ -10,7 +10,7 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
-const {pool} = require('./db');
+const {pool, data_init_base} = require('./db');
 app.use((req, res, next) => {
   req.db = pool;
   next();
@@ -25,8 +25,14 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(PORT, async() => {
+  try {
+    await data_init_base()
+    console.log(`Server running on port ${PORT}`)
+  } catch (error) {
+    console.log(error)
+  } 
+  ;
 });
 
 module.exports = app;
