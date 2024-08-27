@@ -1,4 +1,4 @@
-const pool = require ("../../db")
+const {pool} = require ("../../db")
 
 
 // Función para obtener todos los usuarios

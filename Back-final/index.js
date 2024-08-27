@@ -10,7 +10,7 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
-const pool = require('./db');
+const {pool} = require('./db');
 app.use((req, res, next) => {
   req.db = pool;
   next();

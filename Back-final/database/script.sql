@@ -32,7 +32,7 @@ CREATE TABLE formularios (
 
 CREATE TABLE productos (
   id_productos SERIAL PRIMARY KEY,
-  nombre VARCHAR(100) NOT NULL,
+  nombre VARCHAR(100) NOT NULL UNIQUE,
   precio DECIMAL NOT NULL,
   descripcion TEXT,
   image_url VARCHAR(255)
@@ -60,4 +60,5 @@ INSERT INTO productos (nombre, precio, descripcion, image_url) VALUES
 ('Juguete', 3500, 'Juguete para perro','theprofit.nyc3.cdn.digitaloceanspaces.com/public/Products/juguete-para-perros-forma-de-hueso_6579285a435f1.webp'),
 ('Rascador', 10000, 'Juguete para gato','https://http2.mlstatic.com/D_NQ_NP_896438-MLU76434050926_052024-O.webp'),
 ('Peinetas', 5000, 'Juguete para perro','https://space-theprofit.nyc3.cdn.digitaloceanspaces.com/public/Products/pack-de-accesorios-de-aseo-para-mascotas_6581a594360b5.webp'),
-('Arnes para conejo', 20000, 'Accesorio para conejos','https://faunasalud.cl/wp-content/uploads/2022/11/137-0103.jpg'); 
+('Arnes para conejo', 20000, 'Accesorio para conejos','https://faunasalud.cl/wp-content/uploads/2022/11/137-0103.jpg') ON CONFLICT(nombre) DO NOTHING; 
+
