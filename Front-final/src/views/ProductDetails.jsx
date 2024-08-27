@@ -24,7 +24,7 @@ const ProductDetails = () => {
   if (!product) return <p>Loading...</p>;
 
   return (
-    <div class="imgDetails">
+    <div className="imgDetails">
       <img src={product.image_url} alt={product.nombre} />
       <div className='description'>
       <h2>{product.nombre}</h2>
