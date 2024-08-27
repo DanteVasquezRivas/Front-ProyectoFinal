@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../config/configAxios';
+import "../app.css"
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -26,8 +27,8 @@ const ProductDetails = () => {
     <div>
       <img src={product.image_url} alt={product.nombre} />
       <h2>{product.nombre}</h2>
-      <p>Description: {product.descripcion}</p>
-      <p>Price: ${product.precio}</p>
+      <p>Descripción: {product.descripcion}</p>
+      <p>Precio: ${product.precio}</p>
     </div>
   );
 };
