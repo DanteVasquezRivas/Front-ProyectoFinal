@@ -25,7 +25,7 @@ const Register = () => {
     e.preventDefault();
     try {
       await register(form);
-      navigate("/");
+      navigate("/api");
     } catch (error) {
       setError("El registro falló, por favor intente nuevamente.");
     }
