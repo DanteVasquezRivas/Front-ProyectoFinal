@@ -30,11 +30,7 @@ const ProductDetails = () => {
       <h2>{product.nombre}</h2>
       <p>Descripción: {product.descripcion}</p>
       <p>Precio: ${product.precio}</p>
-<<<<<<< HEAD
-=======
-      </div>
-      
->>>>>>> a82cfd708ad85a978bab8b732ca5c007575972ed
+      </div>      
     </div>
   );
 };
