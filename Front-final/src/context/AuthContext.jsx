@@ -17,7 +17,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const response = await api.post("/auth/login", { email, password });
+    const response = await api.post("/api/auth/login", { email, password });
     const { token, user } = response.data;
     localStorage.setItem("token", token);
     api.defaults.headers.Authorization = `Bearer ${token}`;
@@ -26,7 +26,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const register = async (form) => {
-    const response = await api.post("/auth/register", form);
+    const response = await api.post("/api/auth/register", form);
     const { token, user } = response.data;
     localStorage.setItem("token", token);
     api.defaults.headers.Authorization = `Bearer ${token}`;
