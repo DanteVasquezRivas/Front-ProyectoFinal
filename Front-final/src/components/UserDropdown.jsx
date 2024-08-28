@@ -16,12 +16,6 @@ const UserDropdown = () => {
       </DropdownToggle>
 
       <DropdownMenu>
-        <LinkContainer to="/publish">
-          <DropdownItem>Publicar producto</DropdownItem>
-        </LinkContainer>
-        <LinkContainer to="/my-products">
-          <DropdownItem>Mis Publicaciones</DropdownItem>
-        </LinkContainer>
         <LinkContainer to="/profile">
           <DropdownItem>Mi Perfil</DropdownItem>
         </LinkContainer>
